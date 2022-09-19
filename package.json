@@ -1,0 +1,20 @@
+{
+	"name": "interacciones-contenidos",
+	"version": "1.0.0",
+	"description": "Estudios de interacciones para mostrar contenido de diferentes maneras",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"stylus:watch": "stylus -w ./src/styles/style.styl -o ./pub/styles/style.css"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cavera/interacciones-contenidos.git"
+	},
+	"author": "Leonardo Fonseca <cavera.de@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/cavera/interacciones-contenidos/issues"
+	},
+	"homepage": "https://github.com/cavera/interacciones-contenidos#readme"
+}

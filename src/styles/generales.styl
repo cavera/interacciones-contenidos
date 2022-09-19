@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700')
+
+/*** variables ***/
+//colores
+
+_primero = #6CAF26
+_segundo = #FF6400
+_tercero = #3174B7
+_cuarto = #FFD800
+_quinto = #F2264C
+_blanco = #fff
+_negro = #333
+
+_colorBueno = _primero
+_colorMalo = #D33529
+
+:root
+  --primero #6CAF26
+  --segundo #FF6400
+  --tercero #3174B7
+  --cuarto #FFD800
+  --quinto #F2264C
+  --blanco #fff
+  --negro #333
+
+// clases aclarando y oscureciendo colores
+_colorMuyOscuro(color=_primero)
+  darken(color, 60%)
+_colorOscuro(color = _primero)
+  darken(color, 30%)
+_colorClaro(color=_primero)
+  lighten(color, 30%)
+_colorMuyClaro(color=_primero)
+  lighten(color, 80%)
+
+// unidades comunes
+_radius = 1rem
+_fullRadius = 2rem
+_alpha = .8
+_alturaInterna = calc(100vh - 10em)
+_alturaInternaMovil = calc(100vh - 6em)
+
+fuenteregular = 'Open Sans', sans-serif
+
+
+// animación
+
+_tr_time = 0.3s
+_ani_time = 0.4s
+_easinout = cubic-bezier(0.4, 0.0, 0.2, 1)
+_easout = cubic-bezier(0.0, 0.0, 0.2, 1)
+
+// media queries
+// Extra, extra tiny screen / phone
+_screen-ty-max = 599px
+media_TY = "(max-width: " + _screen-ty-max + ")"
+
+/*** clases ***/
+
+.flex
+  display flex
+
+.flex-distribuido
+  justify-content space-around
+
+.flex-centrado
+  justify-content center
+
+.flex-column
+  flex-direction column !important
+  
+.flex-row
+  flex-direction row
+  
+.flex-row-reverse
+  flex-direction row-reverse
+
+.flex-wrap
+  flex-wrap wrap
+
+.flex-grow1
+  flex-grow 1
+
+.flex-shrink0
+  flex-shrink 0
+
+.align-items-center
+  align-items center
+
+.estirado
+  align-self strecht
+
+.flex-centrado-total
+  display flex
+  justify-content center
+  align-items center
+  
+  @media media_TY
+    justify-content flex-start
+
+/**** auxiliares ****/
+.w100p
+  width 100%
+  max-width 100%
+  
+.h100p
+  height 100%
+  max-height 100%
+.h50p
+  height 50%
+  max-height 50%
+
+.h14e
+  height 14em
+
+.w50p	
+  width 50%
+  max-width 50%
+  
+.w50p--movil100p
+  width 50%
+  max-width 50%
+  
+  @media media_TY
+    width 100%
+    max-width 100%
+
+.w70
+  width 70px
+  flex-shrink 0
+  img
+    @extend .w100p
+
+.wauto
+  width auto !important
+
+.hauto
+  height auto !important
+
+//modificadores
+.dialog-group
+  @media media_TY
+    flex-direction column-reverse
+    align-items center
+
+    img
+      width 100%
+
+.dialog-group--normal
+  @media media_TY
+    flex-direction column
+
+    img
+      width 100%
+.relative
+  position relative
+.absolute
+  position absolute
+  
+.fijo
+  position fixed
+  max-width 100%
+  
+.movil-oculto
+  @media media_TY
+    display none !important
+.movil-visible
+  display: none !important
+  @media media_TY
+    display block !important
+
+.min-altura
+  min-height _alturaInterna
+.max-altura
+  max-height _alturaInterna
+._primero
+  background-color _primero
+.text_primero
+  color _primero
+
+._segundo
+  background-color _segundo
+.text_segundo
+  color _segundo
+
+._tercero
+  background-color _tercero
+.text_tercero
+  color _tercero
+
+._cuarto
+  background-color _cuarto
+.text_cuarto
+  color _cuarto
+
+._quinto
+  background-color _quinto
+.text_quinto
+  color _quinto
+  
+._cuarto
+  background-color _cuarto
+.text_cuarto
+  color _cuarto
+
+._blanco
+  background-color _blanco
+.text_blanco
+  color _blanco
+
+._negro
+  background-color _negro
+.text_negro
+  color _negro
+
+html
+body
+  font-family fuenteregular
+  color _negro
+  height 100%
+  width 100%
+body
+  background radial-gradient(_negro, _colorMuyOscuro(_negro))
+
+.contenedor
+  display flex
+  justify-content space-around
+  align-items center
+  height 100%
+  & > *
+    padding 1em
+#mensaje
+  color _blanco
+  
+.instruccion
+  font-style italic
+  color _cuarto
+  
+/*** mixins ***/
+
+// para quitar estilos de foco
+noFocus()
+  box-shadow none
+  outline none
+
+noSelect()
+  user-select none
+  cursor default
+
+// filtros
+
+filtro(filtro)
+  filter filtro
+  -webkit-filter filtro
+
+// formularios
+
+placeholder()
+  &::-webkit-input-placeholder
+    {block}
+  &:-moz-placeholder
+    {block}
+  &::-moz-placeholder
+    {block}
+  &:-ms-input-placeholder
+    {block} 
